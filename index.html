@@ -177,108 +177,9 @@
 <li>h5中新增的API, 修改的API, 废弃的API 稍作了解 (离线存储, audio, video)</li>
 </ol>
 </blockquote>
-<h3 id="1-1-html语义化标签的理解"><a href="#1-1-html语义化标签的理解" class="headerlink" title="1.1 html语义化标签的理解"></a>1.1 <strong>html语义化标签的理解</strong></h3><p>一般谈及什么什么的理解，是需要搞清楚其概念、为什么会出现及它解决了啥样的痛点。</p>
-<p>HTML 语义化标签就是类似 header、nav、article、aside、footer 等 HTML 标签。使用它，不管是人、还是机器都能理解这段代码代表着什么内容。</p>
-<p>提及的语义化标签其实都是可以用 DIV + CSS 做出一样的效果，单纯看效果两者并没有什么区别，但是页面不止是给人看的，机器也要看，爬虫也要看。网页结构更加清晰方便开发维护。另外，在网络或其他原因导致页面样式文件丢失的时候，有着良好语义结构组成的页面比满是 DIV 组成的页面更加对用户友好。</p>
-<p>随着Web规模的不断扩大，信息量之大已经不在人肉处理的范围之内。这个时候人们开始用机器来处理Web上发布的各种内容，搜索引擎就诞生了。再后来，人们又设计了各种智能程序来索引好的内容作各种处理和挖掘。所以让机器能够更好地读懂Web上发布的各种内容就变得越来越重要。简明地讲，HTML 语义化标签有利于 SEO。</p>
-<p><strong>参考博文</strong>：</p>
-<ul>
-<li>对HTML语义化的一些理解和记录：<a href="https://juejin.im/post/5ae029bcf265da0b7155f15d" target="_blank" rel="noopener">https://juejin.im/post/5ae029bcf265da0b7155f15d</a></li>
-<li>前端经典面试题：如何理解 HTML 语义化：<a href="http://mamicode.com/info-detail-2649833.html" target="_blank" rel="noopener">http://mamicode.com/info-detail-2649833.html</a></li>
-</ul>
-<h3 id="1-2-能否写出简洁的html结构"><a href="#1-2-能否写出简洁的html结构" class="headerlink" title="1.2 能否写出简洁的html结构"></a>1.2 <strong>能否写出简洁的html结构</strong></h3><p><img src="https://user-gold-cdn.xitu.io/2018/4/25/162fba2ed3c06a9f?imageView2/0/w/1280/h/960/ignore-error/1" alt="23"></p>
-<h3 id="1-3-SEO优化"><a href="#1-3-SEO优化" class="headerlink" title="1.3 SEO优化"></a>1.3 <strong>SEO优化</strong></h3><p>SEO 优化就是为了提升网页在搜索引擎自然搜索结果中的收录数量以及排序位置而做的优化行为。简而言之，就是希望百度能搜索引擎能多多收录我们精心制作的网站，并且在别人访问时网站能排在前面。</p>
-<p>SEO 优化通常是从网站的结构布局设计和网页代码两方面来进行的，</p>
-<p><strong>网站结构布局优化</strong>：尽量简单、开门见山，提倡扁平化结构。</p>
-<ol>
-<li>控制首页链接数量，对于不重要没有意义的链接可以为其添加rel=’’nofollow’’属性。</li>
-<li>减小页面的深度，对于网站做扁平的处理，减少目录层次。</li>
-<li>采用行为，表现，结构分离，不要将css和js代码都写到一个页面中，这会使页面冗杂，结构混乱，还不利于页面性能。</li>
-<li>将引入外部JavaScript链接放在body之后，便于在页面先解析再加载js，整体提升用户体验。</li>
-<li>搜索引擎对 HTML5 和 CSS3 更加青睐。</li>
-</ol>
-<p><strong>网页代码优化</strong></p>
-<ol>
-<li>使用title、meta的keywords、description标签来突出页面的差异。</li>
-<li>合理的使用 h1 - h6 标签讲提高搜索引擎对于关键字的权重。</li>
-<li>表格应该使用 caption 表格标题标签。</li>
-<li>img 应使用 “alt” 属性加以说明。</li>
-<li>巧妙利用 CSS 布局，将重要内容的HTML代码放在最前面，最前面的内容被认为是最重要的，优先让“蜘蛛”读取，进行内容关键词抓取。</li>
-<li>重要内容不要用 JS 输出，因为“蜘蛛”不认识。</li>
-<li>尽量少使用 iframe 框架,因为“蜘蛛”一般不会读取其中的内容。</li>
-<li>谨慎使用 display：none ：对于不想显示的文字内容，应当设置 z-index 或设置到浏览器显示器之外。因为搜索引擎会过滤掉 display:none 其中的内容。</li>
-</ol>
-<p><strong>参考博文</strong>：</p>
-<ul>
-<li>SEO优化：<a href="https://blog.csdn.net/qq_37800534/article/details/80301781" target="_blank" rel="noopener">https://blog.csdn.net/qq_37800534/article/details/80301781</a></li>
-<li>web前端性能&amp;SEO优化：<a href="https://blog.csdn.net/xustart7720/article/details/79960591" target="_blank" rel="noopener">https://blog.csdn.net/xustart7720/article/details/79960591</a></li>
-</ul>
-<h3 id="2-1-h5中新增的属性"><a href="#2-1-h5中新增的属性" class="headerlink" title="2.1 h5中新增的属性"></a>2.1 <strong>h5中新增的属性</strong></h3><p>HTML 5 中新增的元素、属性以及接口都可以从官方文档 <a href="https://www.w3.org/TR/2014/NOTE-html5-diff-20141209/" target="_blank" rel="noopener">HTML5 Differences from HTML4</a> 里找到。</p>
-<p><strong><a href="https://www.w3.org/TR/2014/NOTE-html5-diff-20141209/#new-attributes" target="_blank" rel="noopener">新增属性</a></strong>：列举部分</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">新增属性</th>
-<th style="text-align:left">归属元素</th>
-<th style="text-align:left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">autofocus</td>
-<td style="text-align:left">input / select / textarea / button</td>
-<td style="text-align:left">在页面加载时指定元素可获得焦点</td>
-</tr>
-<tr>
-<td style="text-align:left">placeholder</td>
-<td style="text-align:left">input / textarea</td>
-<td style="text-align:left">可在元素中显示些提示信息，但在输入新内容后提示信息就会隐藏</td>
-</tr>
-<tr>
-<td style="text-align:left">form</td>
-<td style="text-align:left">input / output / select / textarea / button / label / object / fieldset</td>
-<td style="text-align:left">关联form元素</td>
-</tr>
-<tr>
-<td style="text-align:left">async</td>
-<td style="text-align:left">script</td>
-<td style="text-align:left">脚本可用时就异步执行，页面继续解析剩余部分。<br>defer则是在页面完成解析后再执行脚本。</td>
-</tr>
-<tr>
-<td style="text-align:left">data-*</td>
-<td style="text-align:left">全局属性</td>
-<td style="text-align:left">自定义属性</td>
-</tr>
-<tr>
-<td style="text-align:left">hidden</td>
-<td style="text-align:left">全局属性</td>
-<td style="text-align:left">隐藏元素内容</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p>关于自定义属性data的使用，可以参考这边博文：<a href="https://www.cnblogs.com/s-qiu/p/7339094.html" target="_blank" rel="noopener">关于H5的自定义属性data-*</a></p>
-<hr>
-<p>类名className 其实和 <strong><a href="https://dom.spec.whatwg.org/#dom-element-classlist" target="_blank" rel="noopener">classList</a></strong> 要联合起来看。className 只是元素的一个 class 属性，而 出lassList则包含了一系列对 class 的操作(contains(), add(), remove(), and toggle())</p>
-<hr>
-<p>关于 form 元素的使用，具体可参考官方给定的注解：<a href="https://www.w3.org/TR/2018/SPSD-html5-20180327/forms.html#the-form-element" target="_blank" rel="noopener">The form element</a></p>
-<hr>
-<p>拖拽Drag：使用的话，可以参考下面两篇博文</p>
-<ul>
-<li><a href="http://www.w3school.com.cn/html5/html_5_draganddrop.asp" target="_blank" rel="noopener">HTML 5 拖放</a></li>
-<li><a href="https://segmentfault.com/a/1190000002810962" target="_blank" rel="noopener">原生拖拽,拖放事件(drag and drop)</a></li>
-</ul>
-<h3 id="3-1-h5中新增的接口"><a href="#3-1-h5中新增的接口" class="headerlink" title="3.1 h5中新增的接口"></a>3.1 <strong>h5中新增的接口</strong></h3><p><strong>官方介绍</strong>：<a href="https://www.w3.org/TR/2014/NOTE-html5-diff-20141209/#new-apis" target="_blank" rel="noopener">新增接口</a></p>
-<hr>
-<p>audio, video 都可以简单得看作是多媒体元素，本质上都是一个 <a href="https://www.w3.org/TR/html5/single-page.html#htmlmediaelement" target="_blank" rel="noopener">HTMLMediaElement</a> 对象。对外暴露的属性和方法都可以从这个对象里面找到，包括load()，play(), pause()，controls。截取部分如下：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1g26lj1elvdj310c0u0gno.jpg" alt></p>
-<hr>
-<p>离线存储 主要看 LocalStorage 和 SessionStorage。</p>
-<p><strong>LocalStorage</strong> 是一种持久化的存储方式，也就是说如果不手动清除，数据就永远不会过期。它是采用 Key-Value 的方式存储数据，底层数据接口是sqlite，按域名将数据分别保存到对应数据库文件里。它能保存更大的数据(IE8上是10MB，Chrome是5M)，同时保存的数据不会再发送给服务器，避免带宽浪费。</p>
-<p>LocalStorage 在隐私模式下不可读取。由于它的本质是在读写文件，数据多的话就会比较卡。另外 LocalStorage不能被爬虫爬取，所以不能完全取代 URL 传参。</p>
-<p><strong>SessionStorage</strong>和服务器端使用的session类似，是一种会话级别的缓存，关闭浏览器数据会被清除。不过有点特别是它的作用域是窗口级别的，也就是说不同窗口间的 SessionStorage 数据是不能共享的。</p>
-<p>参考博文：<a href="https://segmentfault.com/a/1190000007506189" target="_blank" rel="noopener">Javascript本地存储小结</a></p>
-
+        
+          <a class="article-more-a" href="/2019/04/20/前端面试知识点目录整理-HTML篇/#more">more >></a>
+        
       
 
       
@@ -407,55 +308,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="项目预览"><a href="#项目预览" class="headerlink" title="项目预览"></a>项目预览</h2><p><a href="https://calf1234.github.io/vue-todos/"><strong>预览地址</strong></a></p>
-<p>注：这里预览地址采用的是GitHub Pages，而不是GitHub &amp; BitBucket HTML Preview。</p>
-<h2 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h2><ul>
-<li>查询所有待办事项,待办单项</li>
-<li>新增,修改待办事项</li>
-<li>删除,锁定待办事项</li>
-<li>新增，修改，删除待办单项</li>
-<li>未完成的待办单项的计数</li>
-</ul>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>api中有不少这样的写法，这个呢实际上是<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arrow_functions" target="_blank" rel="noopener">箭头函数</a>表达式的语法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> editTodo = <span class="function"><span class="params">params</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> axios.post(<span class="string">`/todo/editTodo`</span>, params).then(<span class="function"><span class="params">res</span> =&gt;</span> res.data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> editRecord = <span class="function"><span class="params">params</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> axios.post(<span class="string">`/todo/editRecord`</span>, params).then(<span class="function"><span class="params">res</span> =&gt;</span> res.data)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>箭头函数的语法如下：很明显上面的写法符合单一参数时，园括号是可选的，这里就是没有写。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(参数<span class="number">1</span>, 参数<span class="number">2</span>, …, 参数N) =&gt; &#123; 函数声明 &#125;</span><br><span class="line">(参数<span class="number">1</span>, 参数<span class="number">2</span>, …, 参数N) =&gt; 表达式（单一）</span><br><span class="line"><span class="comment">//相当于：(参数1, 参数2, …, 参数N) =&gt;&#123; return 表达式; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 当只有一个参数时，圆括号是可选的：</span></span><br><span class="line">(单一参数) =&gt; &#123;函数声明&#125;</span><br><span class="line">单一参数 =&gt; &#123;函数声明&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 没有参数的函数应该写成一对圆括号。</span></span><br><span class="line">() =&gt; &#123;函数声明&#125;</span><br></pre></td></tr></table></figure>
-<p>所以结合箭头函数的语法来看：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">addRecord(&#123;<span class="attr">id</span>: ID, <span class="attr">text</span>: <span class="keyword">this</span>.text&#125;) 等价于这个：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;<span class="attr">id</span>: ID, <span class="attr">text</span>: <span class="keyword">this</span>.text&#125; =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> axios.post(<span class="string">`/todo/editRecord`</span>, &#123;</span><br><span class="line">    id: ID,</span><br><span class="line">    text:</span><br><span class="line">    <span class="comment">// 箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this。</span></span><br><span class="line">    <span class="comment">// 在ECMAScript 3/5中，通过将this值分配给封闭的变量，可以解决this问题。</span></span><br><span class="line">    <span class="keyword">this</span>.text&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> res.data)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><p>axios是基于Promise的http库，用在浏览器和node.js中。axios常用的是get和post请求。<strong>get请求呢可以理解为向服务器发送索取数据的请求，post请求则是向服务器提交数据的请求</strong>。get请求中的数据是附在url后面，数据都是明文可见的，所以相对于post请求 没有那么安全。</p>
-<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p>Promise就是用来进行异步处理的，替代以前JS的异步处理方式（回调函数）。<a href="http://liubin.org/promises-book/" target="_blank" rel="noopener">Promise迷你书</a><br><br>Promise方法链，.then()实际上返回的也是一个Promise对象。而Promise构造函数中resolve和reject参数是默认的，resolve代表着success后调用.then()。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve([<span class="number">200</span>, &#123;</span><br><span class="line">        todo: todo</span><br><span class="line">        &#125;])</span><br><span class="line">    &#125;, <span class="number">200</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> &#123;</span><br><span class="line">            id,</span><br><span class="line">            title,</span><br><span class="line">            count,</span><br><span class="line">            isDelete,</span><br><span class="line">            locked,</span><br><span class="line">            record</span><br><span class="line">        &#125; = res.data.todo</span><br><span class="line">    ...</span><br><span class="line">    ).then(...)</span><br></pre></td></tr></table></figure>
-<h2 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue Router"></a>Vue Router</h2><p><strong><a href="https://router.vuejs.org/zh/guide/essentials/dynamic-matching.html" target="_blank" rel="noopener">动态路由匹配</a></strong>: 动态路径参数 以冒号开头。</p>
-<p><strong><a href="https://router.vuejs.org/zh/guide/essentials/nested-routes.html" target="_blank" rel="noopener">嵌套路由</a></strong>: 在 VueRouter 的参数中使用 children 配置。</p>
-<p><strong><a href="https://router.vuejs.org/zh/guide/essentials/named-routes.html" target="_blank" rel="noopener">命名路由</a></strong>: 可以在创建 Router 实例的时候，在 routes 配置中给某个路由设置名称。这样更容易找到该路由。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/'</span>, <span class="comment">// 访问路径</span></span><br><span class="line">      name: <span class="string">'Layouts'</span>, <span class="comment">// 路径名</span></span><br><span class="line">      component: Layouts, <span class="comment">// 访问的组件,即访问‘/’,它会加载 Layouts 组件所有的内容。</span></span><br><span class="line">      children: [&#123;</span><br><span class="line">        path: <span class="string">'/todo/:id'</span>,</span><br><span class="line">        name: <span class="string">'todo'</span>,</span><br><span class="line">        component: todo</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p><strong><a href="https://router.vuejs.org/zh/guide/essentials/navigation.html" target="_blank" rel="noopener">编程式导航</a></strong>: 导航到指定的 URL，这个方法会向 history 栈添加一个新的记录，所以，当用户点击浏览器后退按钮时，则回到之前的 URL。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//等价于 声明式: &lt;router-link :to="..."&gt;</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">name</span>: <span class="string">'todo'</span>, <span class="attr">params</span>: &#123;<span class="attr">id</span>: id&#125;&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><p><a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener">vuex</a>的核心就是store。store可以看作是一个仓库，里面包含着应用中大部分的state。</p>
-<ol>
-<li>vuex的状态存储是响应式的。若store中的state发生了变化，那么相应的组件也会相应地得到高效更新。</li>
-<li>store中的state不能直接更改，必须通过mutations。</li>
-</ol>
-<p>下面的这段代码，vuex主要包含如下字段：<a href="https://vuex.vuejs.org/zh/guide/state.html" target="_blank" rel="noopener">state</a>、<a href="https://vuex.vuejs.org/zh/guide/mutations.html" target="_blank" rel="noopener">mutations</a>、<a href="https://vuex.vuejs.org/zh/guide/getters.html" target="_blank" rel="noopener">getters</a>和<a href="https://vuex.vuejs.org/zh/guide/actions.html" target="_blank" rel="noopener">actions</a>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建初始应用全局状态变量</span></span><br><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  todoList: [], <span class="comment">// 指我们的待办事项列表数据</span></span><br><span class="line">  menuOpen: <span class="literal">false</span> <span class="comment">// 移动端的时候菜单是否开启</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义所需的 mutations</span></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  EDITTODE (state, data) &#123; <span class="comment">// 定义名为 EDITTODE函数用作改变todoList的值</span></span><br><span class="line">    state.todoList = data</span><br><span class="line">  &#125;,</span><br><span class="line">  MENUOPEN (state) &#123; <span class="comment">// 定义名为 MENUOPEN函数用作改变menuOpen的值</span></span><br><span class="line">    state.menuOpen = !state.menuOpen</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 store 实例并且导出</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  actions,</span><br><span class="line">  getters,</span><br><span class="line">  state,</span><br><span class="line">  mutations</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>state不用多说，包含应用全局状态变量。</p>
-<p>提交 mutations是更改state的唯一方法，比如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">commit(<span class="string">'EDITTODE'</span>, res.data.todos)</span><br><span class="line"></span><br><span class="line"><span class="comment">// type: EDITTODE</span></span><br><span class="line"><span class="comment">// state作为第一参数，data作为mutations的载荷，是可选参数</span></span><br><span class="line">EDITTODE (state, data) &#123;</span><br><span class="line">    state.todoList = data</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>gettters呢是从store中的state中派生出来的内容。比如下面的这段代码中要获取state中的todoList变量，直接调用getTodoList接口即可。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用方式</span></span><br><span class="line"><span class="keyword">this</span>.$store.getters.getTodoList</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getTodoList = <span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 派生状态todoList</span></span><br><span class="line">  <span class="keyword">return</span> state.todoList</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>actions类似于mutations，差异在于：</p>
-<ol>
-<li>它提交的是mutation，而不是直接变更状态。</li>
-<li>actions可以包含任意异步操作。</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用方式</span></span><br><span class="line"><span class="keyword">this</span>.$store.dispatch(<span class="string">'getTodo'</span>).then(</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getTodo = <span class="function">(<span class="params">&#123;commit&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    getTodoList().then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      commit(<span class="string">'EDITTODE'</span>, res.data.todos)</span><br><span class="line">      resolve()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Mock"><a href="#Mock" class="headerlink" title="Mock"></a>Mock</h2><p>下面这段代码是利用Mock框架生成的模拟的数据。具体的语法可以参考wiki: <a href="https://github.com/nuysoft/Mock/wiki" target="_blank" rel="noopener">https://github.com/nuysoft/Mock/wiki</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Mock.mock(&#123; <span class="comment">// 根据数据模板生成模拟数据。</span></span><br><span class="line">    id: Mock.Random.guid(), <span class="comment">// 随机生成一个 GUID</span></span><br><span class="line">    title: Mock.Random.first(), <span class="comment">// 随机生成一个常见的英文名。</span></span><br><span class="line">    isDelete: <span class="literal">false</span>, <span class="comment">// 是否删除</span></span><br><span class="line">    locked: Mock.Random.boolean(), <span class="comment">// 随机锁定</span></span><br><span class="line">    record: COUNT.map(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="comment">// 代办单项列表的数据</span></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        text: Mock.Random.cparagraph(<span class="number">2</span>), <span class="comment">// 随机内容</span></span><br><span class="line">        isDelete: <span class="literal">false</span>, <span class="comment">// 是否删除</span></span><br><span class="line">        checked: Mock.Random.boolean() <span class="comment">// 是否完成</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>光有Mock生成的数据还是无法工作的，<strong>需要想办法和axios关联起来，所以axios-mock-adapter 就来了</strong>。</p>
-<p>下面部分的代码就有模拟get和post请求的。具体的语法可以参考<a href="https://www.npmjs.com/package/axios-mock-adapter" target="_blank" rel="noopener">npm对应包里面的注释</a>。</p>
-<p>get和post请求的回复 reply函数，它的参数格式是这样的：[status, data, headers]，reply允许返回一个promise对象。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mock = <span class="keyword">new</span> MockAdapter(axios)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应 axios.get(`/todo/listId`, &#123; params: params&#125;)</span></span><br><span class="line">mock.onGet(<span class="string">'/todo/listId'</span>).reply(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123;</span><br><span class="line">    id</span><br><span class="line">  &#125; = config.params</span><br><span class="line">  <span class="comment">// id 是传进来的值</span></span><br><span class="line">  <span class="comment">// todo 是根据id和现有的Todos数据匹配，找出id相等的数据，在进行返回</span></span><br><span class="line">  <span class="keyword">let</span> todo = Todos.find(<span class="function"><span class="params">todo</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> id &amp;&amp; todo.id === id</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// todo.count (等待完成数目)等于 todo.record（代办事项列表下面未被选择的数据</span></span><br><span class="line">  todo.count = todo.record.filter(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> data.checked === <span class="literal">false</span></span><br><span class="line">  &#125;).length</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve([<span class="number">200</span>, &#123;</span><br><span class="line">        todo: todo</span><br><span class="line">      &#125;])</span><br><span class="line">    &#125;, <span class="number">200</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应 axios.post(`/todo/editTodo`, params).then(res =&gt; res.data)</span></span><br><span class="line">mock.onPost(<span class="string">'/todo/editTodo'</span>).reply(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123;</span><br><span class="line">    todo</span><br><span class="line">  &#125; = <span class="built_in">JSON</span>.parse(config.data)</span><br><span class="line">  Todos.some(<span class="function">(<span class="params">t, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (t.id === todo.id) &#123;</span><br><span class="line">      t.title = todo.title</span><br><span class="line">      t.locked = todo.locked</span><br><span class="line">      t.isDelete = todo.isDelete</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve([<span class="number">200</span>])</span><br><span class="line">    &#125;, <span class="number">200</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2019/04/14/vue实战2知识点回顾/#more">more >></a>
+        
       
 
       
@@ -537,14 +392,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="问题前言"><a href="#问题前言" class="headerlink" title="问题前言"></a>问题前言</h1><p>练习vue项目开发的时候，观看她人写的项目中css语法，发现了如下写法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[class^="icon-"]</span>,</span><br><span class="line"><span class="selector-attr">[class*=" icon-"]</span> &#123;</span><br><span class="line">  .font-s2;</span><br><span class="line">  <span class="selector-tag">float</span>: <span class="selector-tag">left</span>;</span><br><span class="line">  <span class="selector-tag">margin-left</span>: <span class="selector-tag">-1</span><span class="selector-class">.5rem</span>;</span><br><span class="line">  <span class="selector-tag">margin-right</span>: <span class="selector-class">.5rem</span>;</span><br><span class="line">  <span class="selector-tag">margin-top</span>: <span class="selector-class">.1rem</span>;</span><br><span class="line">  <span class="selector-tag">width</span>: 1<span class="selector-tag">em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h1 id="语法解析"><a href="#语法解析" class="headerlink" title="语法解析"></a>语法解析</h1><p>第一时间的想法是直接去stackoverflow上搜索看看，后面搜索到了这篇文章 <a href="https://stackoverflow.com/questions/20322740/odd-css-syntax-class-icon-class-icon" target="_blank" rel="noopener">Odd CSS syntax. [class^=’icon-‘], [class*=’ icon-‘]</a>。</p>
-<p>看了下文中他人的解释：<strong>瞬间就明白了哈</strong>。但是呢 这只是别人的解释嘛，我们还是要在官网上看到明确的写法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[class^=&apos;icon-&apos;] - classes starting with &apos;icon-&apos; (eg. class=&apos;icon-blah blah&apos;)</span><br><span class="line">[class$=&apos;-icon&apos;] - classes ending with &apos;-icon&apos;   (eg. class=&apos;blah blah-icon&apos;)</span><br><span class="line">[class*=&apos;icon&apos;]  - classes containing &apos;icon&apos;     (eg. class=&apos;blah xxx-icon-blah&apos;)</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h1 id="官网写法"><a href="#官网写法" class="headerlink" title="官网写法"></a>官网写法</h1><p>后面在官网<a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/#selectors" target="_blank" rel="noopener"><strong>css selector</strong></a>中发现了如下写法：只截取了部分内容<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g21vs25l0pj31f00rswiz.jpg" alt="部分css selector语法"></p>
-<hr>
-<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><p>stackoverflow是个不错的问题解决地方。另外一些问题归根结底都是基础知识不够深厚，阅读官网资料不够细心、不够耐心。</p>
-
+        
+          <a class="article-more-a" href="/2019/04/14/class-icon-class-icon/#more">more >></a>
+        
       
 
       
@@ -557,11 +407,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Front-end</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题解决</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题解决</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Front-end</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -630,49 +480,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>原文出处</strong>: <a href="https://andy-bell.design/wrote/get-css-custom-property-value-with-javascript/" target="_blank" rel="noopener">https://andy-bell.design/wrote/get-css-custom-property-value-with-javascript/</a></p>
-<hr>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="_blank" rel="noopener">CSS 自定义属性(也叫 CSS 变量)</a>通常是用在高度便捷配置的 CSS 组件和主题，但是这并不是它们唯一的便利之处。类似向某些JavaScript发送一些信息的场景，也是需要 CSS 变量的。</p>
-<p>大白话地来讲，就是 CSS 变量的使用场景，它能够解决什么样的痛点。</p>
-<blockquote>
-<p>在构建大型站点时，作者通常会面对可读性的挑战。在这些网页中，所使用的 CSS 的数量是非常庞大的，并且在许多场合大量的信息会重复使用。例如，在网页中维护一个配色方案，意味着一些颜色在 CSS 文件中多次出现，并且被重复使用。当你修改配色方案时，不论是调整某个颜色或完全修改整个配色，都会成为一个复杂的问题，不容出错，而单纯查找替换是远远不够的。</p>
-<p>如果使用了 CSS 框架，这些情况会变得尤为糟糕，此时如果要修改配色，则需要对框架本身进行修改。在这些场合使用 LESS 或 Sass 类似的预处理器是非常有帮助的，但是这种通过添加额外步骤的方式，会增加系统的复杂性。 CSS 变量为我们带来一些预处理器的便利，并且不需要额外的编译。</p>
-</blockquote>
-<blockquote>
-<p>这些变量的第二个优势就是名称本身就包含了语义的信息。 CSS 文件变得易读和理解。main-text-color 比文档中的 #00ff00 更容易理解。特别是同样的颜色出现在不同的文件中的时候。</p>
-</blockquote>
-<p><br></p>
-<p>在过去，我做的最多的就是获取指定节点内容，而不是查询 window 的宽度。</p>
-<p><strong>CSS</strong>:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">'mobile'</span>;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">30rem</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">'large-mobile'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">70rem</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">'desktop'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>JavaScript</strong>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBreakpoint</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> getComputedStyle(<span class="built_in">document</span>.querySelector(<span class="string">'body'</span>), <span class="string">':before'</span>)</span><br><span class="line">    .getPropertyValue(<span class="string">'content'</span>)</span><br><span class="line">    .replace(<span class="regexp">/\"/g</span>, <span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个方法感觉有点搭上我们文章提到的主题，但是配合 CSS 变量，可以进一步提高代码的灵活性，并且通过属性来发送值感觉更加的高大上。</p>
-<hr>
-<p><strong>方法 getCSSCustomProp</strong></p>
-<p>我想看看我的JavaScript组件是否支持 CSS 滚动捕获，但是一直受困于具体的JavaScript方案。 CSS 提供了我新的简明的思路，并且奇迹般地将状态值传递给我的JavaScript。</p>
-<p>我在组件内设置了一个默认值，如下所示：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.my-component</span> &#123;</span><br><span class="line">  <span class="attribute">--supports-scroll-snap</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后结合 @supports，我可以这样实现：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">supports</span> (scroll-snap-type: x mandatory) &#123;</span><br><span class="line">  <span class="selector-class">.my-component</span> &#123;</span><br><span class="line">    <span class="attribute">--supports-scroll-snap</span>: <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最终，JavaScript 这样调用：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myComponent = <span class="built_in">document</span>.querySelector(<span class="string">'.my-component'</span>);</span><br><span class="line"><span class="keyword">const</span> isSnapSupported = getCSSCustomProp(<span class="string">'--supports-scroll-snap'</span>, myComponent, <span class="string">'boolean'</span>);</span><br></pre></td></tr></table></figure>
-<p>方法 getCSSCustomProp 的实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Pass in an element and its CSS Custom Property that you want the value of.</span></span><br><span class="line"><span class="comment"> * Optionally, you can determine what datatype you get back.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param &#123;String&#125; propKey</span></span><br><span class="line"><span class="comment"> * @param &#123;HTMLELement&#125; element=document.documentElement</span></span><br><span class="line"><span class="comment"> * @param &#123;String&#125; castAs='string'</span></span><br><span class="line"><span class="comment"> * @returns &#123;*&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> getCSSCustomProp = <span class="function">(<span class="params">propKey, element = <span class="built_in">document</span>.documentElement, castAs = <span class="string">'string'</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> response = getComputedStyle(element).getPropertyValue(propKey);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Tidy up the string if there's something to work with</span></span><br><span class="line">  <span class="keyword">if</span> (response.length) &#123;</span><br><span class="line">    response = response.replace(<span class="regexp">/\"/g</span>, <span class="string">''</span>).trim();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Convert the response into a whatever type we wanted</span></span><br><span class="line">  <span class="keyword">switch</span> (castAs) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'number'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'int'</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">parseInt</span>(response, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'float'</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">parseFloat</span>(response, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'boolean'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'bool'</span>:</span><br><span class="line">      <span class="keyword">return</span> response === <span class="string">'true'</span> || response === <span class="string">'1'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Return the string response by default</span></span><br><span class="line">  <span class="keyword">return</span> response;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>参考资料</strong>：</p>
-<ul>
-<li><p>使用CSS变量：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties</a></p>
-</li>
-<li><p>深入学习CSS自定义属性(CSS变量)：<a href="https://www.w3cplus.com/css3/css-properties-in-depth.html" target="_blank" rel="noopener">https://www.w3cplus.com/css3/css-properties-in-depth.html</a></p>
-</li>
-<li><p>Window​.get​Computed​Style()：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle</a></p>
-</li>
-<li><p>获取元素CSS值之getComputedStyle方法熟悉：<a href="https://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/" target="_blank" rel="noopener">https://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/</a></p>
-</li>
-<li><p>CSS3条件判断——@supports：<a href="https://www.w3cplus.com/css3/css3-supports.html" target="_blank" rel="noopener">https://www.w3cplus.com/css3/css3-supports.html</a></p>
-</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2019/04/13/译：Get-a-CSS-Custom-Property-value-with-JavaScript/#more">more >></a>
+        
       
 
       
@@ -758,15 +568,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
+          <a class="article-more-a" href="/2019/04/13/hello-world/#more">more >></a>
+        
       
 
       
@@ -897,19 +701,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">问题解决</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -918,6 +714,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS Selectors</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
