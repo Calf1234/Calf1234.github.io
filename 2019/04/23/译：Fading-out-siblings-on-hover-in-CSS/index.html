@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://calf1234.github.io">
-  <title>Tag: 项目实战 | Calf1234的博客</title>
+  <title>译：Fading out siblings on hover in CSS | Calf1234的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个啥都会一点的大咸鱼，再不努把力就要是一条永远翻不了身的大咸鱼咯。">
-<meta name="keywords" content="转行前端的小牛犊，js，html，html5，css，css3，less，webpack，c&#x2F;c++">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Calf1234的博客">
-<meta property="og:url" content="https://calf1234.github.io/tags/项目实战/index.html">
+  <meta name="description" content="原文出处：https://www.trysmudford.com/blog/fade-out-siblings-css-trick/">
+<meta name="keywords" content="译文,Front-end,CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="译：Fading out siblings on hover in CSS">
+<meta property="og:url" content="https://calf1234.github.io/2019/04/23/译：Fading-out-siblings-on-hover-in-CSS/index.html">
 <meta property="og:site_name" content="Calf1234的博客">
-<meta property="og:description" content="一个啥都会一点的大咸鱼，再不努把力就要是一条永远翻不了身的大咸鱼咯。">
+<meta property="og:description" content="原文出处：https://www.trysmudford.com/blog/fade-out-siblings-css-trick/">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1g2cc45ox5bg30gn04z75p.gif">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1g2cd93cpktg30gn050jt3.gif">
+<meta property="og:updated_time" content="2019-04-23T03:04:34.235Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Calf1234的博客">
-<meta name="twitter:description" content="一个啥都会一点的大咸鱼，再不努把力就要是一条永远翻不了身的大咸鱼咯。">
+<meta name="twitter:title" content="译：Fading out siblings on hover in CSS">
+<meta name="twitter:description" content="原文出处：https://www.trysmudford.com/blog/fade-out-siblings-css-trick/">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1g2cc45ox5bg30gn04z75p.gif">
   
     <link rel="alternative" href="/atom.xml" title="Calf1234的博客" type="application/atom+xml">
   
@@ -146,68 +150,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-译：Fading-out-siblings-on-hover-in-CSS" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/14/vue实战2知识点回顾/" class="archive-article-date">
-  	<time datetime="2019-04-14T01:07:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/14/vue实战2知识点回顾/">Vue实战2知识点回顾</a>
+    <h1 class="article-title" itemprop="name">
+      译：Fading out siblings on hover in CSS
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/04/23/译：Fading-out-siblings-on-hover-in-CSS/" class="archive-article-date">
+  	<time datetime="2019-04-23T03:02:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原文出处：<a href="https://www.trysmudford.com/blog/fade-out-siblings-css-trick/" target="_blank" rel="noopener">https://www.trysmudford.com/blog/fade-out-siblings-css-trick/</a></p>
+<a id="more"></a>
+<hr>
+<p>这里有个非常好的实用技巧，可以让你的悬浮效果更加突出。当你悬浮在它的上面时，它的兄弟元素也有炫酷的效果。这个效果包括：</p>
+<ul>
+<li>缩放悬浮元素</li>
+<li>兄弟元素淡出</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1g2cc45ox5bg30gn04z75p.gif" alt></p>
+<p>传统上悬浮效果一般是直接作用在被悬浮的元素。但是我们也可以<strong>在父元素上监听到悬浮事件</strong>。</p>
+<p>这就是文章中提到的实用技巧的实质所在，当父元素监听到悬浮时我们淡出所有的子元素，然后附上实际悬浮元素的悬浮效果。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span><span class="selector-pseudo">:hover</span> &gt; * &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parent</span><span class="selector-pseudo">:hover</span> &gt; *<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>整体来讲，目前的效果是不错的。但是当你在子元素间徘徊时，存在一些不好的影响即所有子元素都会淡出。很幸运的是我们可以使用 pointer-events 属性来解决这个副作用。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1g2cd93cpktg30gn050jt3.gif" alt></p>
+<p><strong>pointer-events: none</strong> 告诉浏览器忽略当前元素和其所有子元素的鼠标事件。但是，我们可以告诉子元素再次监听鼠标，<strong>pointer-events: auto</strong>。这样子我们只有悬浮在子元素时才会呈现酷炫的悬浮效果，而且依旧会出发父元素的:hover 伪元素选择器。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">pointer-events</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parent</span> &gt; * &#123;</span><br><span class="line">  <span class="attribute">pointer-events</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>完整的CSS样例如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.fade-out-siblings</span> &#123;</span><br><span class="line">  <span class="attribute">--gutter</span>: <span class="number">2.5rem</span>;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">var</span>(--gradient-blue);</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">grid-gap</span>: <span class="built_in">var</span>(--gutter);</span><br><span class="line">  <span class="attribute">padding</span>: <span class="built_in">var</span>(--gutter);</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">2rem</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">pointer-events</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.fade-out-siblings</span> &gt; * &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">30px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">2rem</span> <span class="number">1rem</span>;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">pointer-events</span>: auto;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">300ms</span> opacity, <span class="number">300ms</span> transform;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.fade-out-siblings</span><span class="selector-pseudo">:hover</span> &gt; * &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.4</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.fade-out-siblings</span><span class="selector-pseudo">:hover</span> &gt; *<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">40em</span>) &#123;</span><br><span class="line">  <span class="selector-class">.fade-out-siblings</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(3, 1fr);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.fade-out-siblings</span> &gt; * &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">4rem</span> <span class="number">1rem</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目实战</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">译文</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Front-end</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目回顾</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://calf1234.github.io/2019/04/23/译：Fading-out-siblings-on-hover-in-CSS/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/04/20/前端面试知识点目录整理-HTML篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端面试知识点目录整理-HTML篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -230,9 +337,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
