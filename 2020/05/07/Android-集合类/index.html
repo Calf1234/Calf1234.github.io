@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://calf1234.github.io">
   <title>Android 集合类 | Calf1234的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Collections Framework Overview interface Collection implements Iterable">
-<meta name="keywords" content="Android,Collection">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 集合类">
-<meta property="og:url" content="https://calf1234.github.io/2020/05/07/Android-集合类/index.html">
+<meta property="og:url" content="https://calf1234.github.io/2020/05/07/Android-%E9%9B%86%E5%90%88%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Calf1234的博客">
 <meta property="og:description" content="Collections Framework Overview interface Collection implements Iterable">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-07T13:08:58.203Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-07T12:53:56.000Z">
+<meta property="article:modified_time" content="2020-05-08T05:57:25.168Z">
+<meta property="article:author" content="Calf1234">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Collection">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 集合类">
-<meta name="twitter:description" content="Collections Framework Overview interface Collection implements Iterable">
   
     <link rel="alternative" href="/atom.xml" title="Calf1234的博客" type="application/atom+xml">
   
@@ -37,8 +38,8 @@
 
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -159,7 +160,7 @@
   
 
         
-        <a href="/2020/05/07/Android-集合类/" class="archive-article-date">
+        <a href="/2020/05/07/Android-%E9%9B%86%E5%90%88%E7%B1%BB/" class="archive-article-date">
   	<time datetime="2020-05-07T12:53:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
 </a>
         
@@ -169,43 +170,49 @@
       
         <ol>
 <li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html" target="_blank" rel="noopener">Collections Framework Overview</a></li>
-<li><a href="https://developer.android.google.cn/reference/java/util/Collection" target="_blank" rel="noopener">interface Collection implements Iterable<e></e></a></li>
+<li><a href="https://developer.android.google.cn/reference/java/util/Collection" target="_blank" rel="noopener">interface Collection implements Iterable<E></a></li>
 </ol>
 <a id="more"></a>
 <hr>
 <ol>
-<li>java.util.Collection<e><ol>
-<li>java.util.List<e><ol>
-<li>java.util.ArrayList<e>, 线程不安全 –&gt; 线程安全, Collections#synchronizedList</e></li>
-<li>java.util.LinkedList<e>, 线程不安全 –&gt; 同 ArrayList</e></li>
-<li>java.util.concurrent.CopyOnWriteArrayList<e>, 线程安全, 读多写少的并发场景</e></li>
+<li>java.util.Collection<E>
+<ol>
+<li>java.util.List<E>
+<ol>
+<li>java.util.ArrayList<E>, 线程不安全 --&gt; 线程安全, Collections#synchronizedList</li>
+<li>java.util.LinkedList<E>, 线程不安全 --&gt; 同 ArrayList</li>
+<li>java.util.concurrent.CopyOnWriteArrayList<E>, 线程安全, 读多写少的并发场景</li>
 <li>…</li>
 </ol>
-</e></li>
-<li>java.util.Set<e><ol>
-<li>java.util.HashSet<e>, 线程不安全 –&gt; 线程安全, Collections#synchronizedSet</e></li>
-<li>java.util.TreeSet<e>, 线程不安全 –&gt; 线程安全, Collections#synchronizedSortedSet</e></li>
-<li>java.util.concurrent.ConcurrentSkipListSet<e>, 线程安全</e></li>
+</li>
+<li>java.util.Set<E>
+<ol>
+<li>java.util.HashSet<E>, 线程不安全 --&gt; 线程安全, Collections#synchronizedSet</li>
+<li>java.util.TreeSet<E>, 线程不安全 --&gt; 线程安全, Collections#synchronizedSortedSet</li>
+<li>java.util.concurrent.ConcurrentSkipListSet<E>, 线程安全</li>
 <li>…</li>
 </ol>
-</e></li>
-<li>java.util.Queue<e><ol>
-<li>java.util.concurrent.ArrayBlockingQueue<e></e></li>
-<li>java.util.concurrent.DelayQueue<e extends java.util.concurrent.delayed></e></li>
-<li>java.util.concurrent.LinkedBlockingQueue<e></e></li>
-<li>java.util.concurrent.PriorityBlockingQueue<e></e></li>
+</li>
+<li>java.util.Queue<E>
+<ol>
+<li>java.util.concurrent.ArrayBlockingQueue<E></li>
+<li>java.util.concurrent.DelayQueue<E extends java.util.concurrent.Delayed></li>
+<li>java.util.concurrent.LinkedBlockingQueue<E></li>
+<li>java.util.concurrent.PriorityBlockingQueue<E></li>
 <li>…</li>
 </ol>
-</e></li>
+</li>
 </ol>
-</e></li>
-<li>java.util.Map&lt;K, V&gt;<ol>
-<li>java.util.HashMap&lt;K, V&gt;, 线程不安全 –&gt; 线程安全, Collections#synchronizedMap </li>
-<li>java.util.TreeMap&lt;K, V&gt;, 线程不安全 –&gt; 线程安全, Collections#synchronizedSortedMap</li>
+</li>
+<li>java.util.Map&lt;K, V&gt;
+<ol>
+<li>java.util.HashMap&lt;K, V&gt;, 线程不安全 --&gt; 线程安全, Collections#synchronizedMap</li>
+<li>java.util.TreeMap&lt;K, V&gt;, 线程不安全 --&gt; 线程安全, Collections#synchronizedSortedMap</li>
 <li>java.util.concurrent.ConcurrentSkipListMap&lt;K, V&gt;, 线程安全</li>
 </ol>
 </li>
-<li>工具类<ol>
+<li>工具类
+<ol>
 <li>java.util.Collections</li>
 <li>java.util.Arrays</li>
 </ol>
@@ -284,7 +291,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://calf1234.github.io/2020/05/07/Android-集合类/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://calf1234.github.io/2020/05/07/Android-%E9%9B%86%E5%90%88%E7%B1%BB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,7 +306,7 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/05/07/财报阅读技巧/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/05/07/%E8%B4%A2%E6%8A%A5%E9%98%85%E8%AF%BB%E6%8A%80%E5%B7%A7/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">财报阅读技巧</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -422,22 +429,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题解决</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS Selectors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
@@ -454,7 +445,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">问题解决</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS Selectors</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,15 +477,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">财务分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">企业财报</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">投资基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">财务分析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,7 +505,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
