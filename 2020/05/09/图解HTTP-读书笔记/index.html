@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://calf1234.github.io">
-  <title>译：Get a CSS Custom Property value with JavaScript | Calf1234的博客</title>
+  <title>图解HTTP-读书笔记 | Calf1234的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原文出处: https:&#x2F;&#x2F;andy-bell.design&#x2F;wrote&#x2F;get-css-custom-property-value-with-javascript&#x2F;">
+  <meta name="description" content="TCP&#x2F;IP协议分层：  应用层, HTTP、FTP、DNS 传输层, TCP、UDP 网络层(又名网络互连层), IP 链路层(又名数据链路层、网络接口层), 以太网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="译：Get a CSS Custom Property value with JavaScript">
-<meta property="og:url" content="https://calf1234.github.io/2019/04/13/%E8%AF%91%EF%BC%9AGet-a-CSS-Custom-Property-value-with-JavaScript/index.html">
+<meta property="og:title" content="图解HTTP-读书笔记">
+<meta property="og:url" content="https://calf1234.github.io/2020/05/09/%E5%9B%BE%E8%A7%A3HTTP-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Calf1234的博客">
-<meta property="og:description" content="原文出处: https:&#x2F;&#x2F;andy-bell.design&#x2F;wrote&#x2F;get-css-custom-property-value-with-javascript&#x2F;">
+<meta property="og:description" content="TCP&#x2F;IP协议分层：  应用层, HTTP、FTP、DNS 传输层, TCP、UDP 网络层(又名网络互连层), IP 链路层(又名数据链路层、网络接口层), 以太网">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-04-13T15:34:49.000Z">
-<meta property="article:modified_time" content="2019-04-22T16:13:49.778Z">
+<meta property="article:published_time" content="2020-05-09T06:43:42.000Z">
+<meta property="article:modified_time" content="2020-05-10T08:16:49.280Z">
 <meta property="article:author" content="Calf1234">
-<meta property="article:tag" content="Front-end">
-<meta property="article:tag" content="CSS">
-<meta property="article:tag" content="译文">
-<meta property="article:tag" content="CSS 变量">
+<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="读书笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Calf1234的博客" type="application/atom+xml">
@@ -150,75 +148,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-译：Get-a-CSS-Custom-Property-value-with-JavaScript" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-图解HTTP-读书笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      译：Get a CSS Custom Property value with JavaScript
+      图解HTTP-读书笔记
     </h1>
   
 
         
-        <a href="/2019/04/13/%E8%AF%91%EF%BC%9AGet-a-CSS-Custom-Property-value-with-JavaScript/" class="archive-article-date">
-  	<time datetime="2019-04-13T15:34:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-13</time>
+        <a href="/2020/05/09/%E5%9B%BE%E8%A7%A3HTTP-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-05-09T06:43:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>原文出处</strong>: <a href="https://andy-bell.design/wrote/get-css-custom-property-value-with-javascript/" target="_blank" rel="noopener">https://andy-bell.design/wrote/get-css-custom-property-value-with-javascript/</a></p>
+        <p>TCP/IP协议分层：<br/></p>
+<ol>
+<li>应用层, HTTP、FTP、DNS</li>
+<li>传输层, TCP、UDP</li>
+<li>网络层(又名网络互连层), IP</li>
+<li>链路层(又名数据链路层、网络接口层), 以太网</li>
+</ol>
+<hr>
 <a id="more"></a>
+<h2 id="span-id-chapter3-HTTP报文内的-HTTP信息"><span id="chapter3"/>HTTP报文内的 HTTP信息</h2>
+<p>用于 HTTP协议交互的信息被称之为 HTTP报文。客户端的 HTTP报文叫做请求报文，服务器端的报文叫做响应报文。HTTP报文本身是由多行数据构成的字符串文本。</p>
+<p>HTTP报文大致可分为报文首部和报文主体两块。两种由最初出现的空行来划分。通常，并不一定要有报文主体。HTTP报文(message)的主体用于传输请求或响应的实体(entity)主体。通常，报文主体等于实体主体。只有当传输中进行编码(gzip等)操作时，实体主体的内容发生变化，才导致它和报文主体产生差异。</p>
+<p>HTTP请求报文：响应报文也是同样的格式<br/></p>
+<ol>
+<li>报文首部：
+<ol>
+<li>请求行，[方法，URI，协议版本][协议版本，状态码]</li>
+<li>请求首部字段</li>
+<li>通用首部字段</li>
+<li>实体首部字段</li>
+<li>其他，[如 Cookie]</li>
+</ol>
+</li>
+<li>空行</li>
+<li>报文主体</li>
+</ol>
+<h2 id="span-id-chapter4-返回结果的-HTTP状态码"><span id="chapter4"/>返回结果的 HTTP状态码</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1xx</td>
+<td style="text-align:left">信息性状态码</td>
+<td style="text-align:left">接受的请求正在处理</td>
+</tr>
+<tr>
+<td style="text-align:left">2xx</td>
+<td style="text-align:left">成功状态码</td>
+<td style="text-align:left">请求正常处理完毕</td>
+</tr>
+<tr>
+<td style="text-align:left">3xx</td>
+<td style="text-align:left">重定向状态码</td>
+<td style="text-align:left">需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td style="text-align:left">4xx</td>
+<td style="text-align:left">客户端错误状态码</td>
+<td style="text-align:left">服务器无法处理请求</td>
+</tr>
+<tr>
+<td style="text-align:left">5xx</td>
+<td style="text-align:left">服务器错误状态码</td>
+<td style="text-align:left">服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="_blank" rel="noopener">CSS 自定义属性(也叫 CSS 变量)</a>通常是用在高度便捷配置的 CSS 组件和主题，但是这并不是它们唯一的便利之处。类似向某些JavaScript发送一些信息的场景，也是需要 CSS 变量的。</p>
-<p>大白话地来讲，就是 CSS 变量的使用场景，它能够解决什么样的痛点。</p>
-<blockquote>
-<p>在构建大型站点时，作者通常会面对可读性的挑战。在这些网页中，所使用的 CSS 的数量是非常庞大的，并且在许多场合大量的信息会重复使用。例如，在网页中维护一个配色方案，意味着一些颜色在 CSS 文件中多次出现，并且被重复使用。当你修改配色方案时，不论是调整某个颜色或完全修改整个配色，都会成为一个复杂的问题，不容出错，而单纯查找替换是远远不够的。</p>
-<p>如果使用了 CSS 框架，这些情况会变得尤为糟糕，此时如果要修改配色，则需要对框架本身进行修改。在这些场合使用 LESS 或 Sass 类似的预处理器是非常有帮助的，但是这种通过添加额外步骤的方式，会增加系统的复杂性。 CSS 变量为我们带来一些预处理器的便利，并且不需要额外的编译。</p>
-</blockquote>
-<blockquote>
-<p>这些变量的第二个优势就是名称本身就包含了语义的信息。 CSS 文件变得易读和理解。main-text-color 比文档中的 #00ff00 更容易理解。特别是同样的颜色出现在不同的文件中的时候。</p>
-</blockquote>
-<br>
-<p>在过去，我做的最多的就是获取指定节点内容，而不是查询 window 的宽度。</p>
-<p><strong>CSS</strong>:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">'mobile'</span>;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">30rem</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">'large-mobile'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">70rem</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">'desktop'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>JavaScript</strong>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBreakpoint</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> getComputedStyle(<span class="built_in">document</span>.querySelector(<span class="string">'body'</span>), <span class="string">':before'</span>)</span><br><span class="line">    .getPropertyValue(<span class="string">'content'</span>)</span><br><span class="line">    .replace(<span class="regexp">/\"/g</span>, <span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个方法感觉有点搭上我们文章提到的主题，但是配合 CSS 变量，可以进一步提高代码的灵活性，并且通过属性来发送值感觉更加的高大上。</p>
-<hr>
-<p><strong>方法 getCSSCustomProp</strong></p>
-<p>我想看看我的JavaScript组件是否支持 CSS 滚动捕获，但是一直受困于具体的JavaScript方案。 CSS 提供了我新的简明的思路，并且奇迹般地将状态值传递给我的JavaScript。</p>
-<p>我在组件内设置了一个默认值，如下所示：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.my-component</span> &#123;</span><br><span class="line">  <span class="attribute">--supports-scroll-snap</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后结合 @supports，我可以这样实现：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">supports</span> (scroll-snap-type: x mandatory) &#123;</span><br><span class="line">  <span class="selector-class">.my-component</span> &#123;</span><br><span class="line">    <span class="attribute">--supports-scroll-snap</span>: <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最终，JavaScript 这样调用：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myComponent = <span class="built_in">document</span>.querySelector(<span class="string">'.my-component'</span>);</span><br><span class="line"><span class="keyword">const</span> isSnapSupported = getCSSCustomProp(<span class="string">'--supports-scroll-snap'</span>, myComponent, <span class="string">'boolean'</span>);</span><br></pre></td></tr></table></figure>
-<p>方法 getCSSCustomProp 的实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Pass in an element and its CSS Custom Property that you want the value of.</span></span><br><span class="line"><span class="comment"> * Optionally, you can determine what datatype you get back.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param &#123;String&#125; propKey</span></span><br><span class="line"><span class="comment"> * @param &#123;HTMLELement&#125; element=document.documentElement</span></span><br><span class="line"><span class="comment"> * @param &#123;String&#125; castAs='string'</span></span><br><span class="line"><span class="comment"> * @returns &#123;*&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> getCSSCustomProp = <span class="function">(<span class="params">propKey, element = <span class="built_in">document</span>.documentElement, castAs = <span class="string">'string'</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> response = getComputedStyle(element).getPropertyValue(propKey);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Tidy up the string if there's something to work with</span></span><br><span class="line">  <span class="keyword">if</span> (response.length) &#123;</span><br><span class="line">    response = response.replace(<span class="regexp">/\"/g</span>, <span class="string">''</span>).trim();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Convert the response into a whatever type we wanted</span></span><br><span class="line">  <span class="keyword">switch</span> (castAs) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'number'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'int'</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">parseInt</span>(response, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'float'</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">parseFloat</span>(response, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'boolean'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'bool'</span>:</span><br><span class="line">      <span class="keyword">return</span> response === <span class="string">'true'</span> || response === <span class="string">'1'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Return the string response by default</span></span><br><span class="line">  <span class="keyword">return</span> response;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>参考资料</strong>：</p>
-<ul>
-<li>
-<p>使用CSS变量：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties</a></p>
-</li>
-<li>
-<p>深入学习CSS自定义属性(CSS变量)：<a href="https://www.w3cplus.com/css3/css-properties-in-depth.html" target="_blank" rel="noopener">https://www.w3cplus.com/css3/css-properties-in-depth.html</a></p>
-</li>
-<li>
-<p>Window​.get​Computed​Style()：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle</a></p>
-</li>
-<li>
-<p>获取元素CSS值之getComputedStyle方法熟悉：<a href="https://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/" target="_blank" rel="noopener">https://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/</a></p>
-</li>
-<li>
-<p>CSS3条件判断——@supports：<a href="https://www.w3cplus.com/css3/css3-supports.html" target="_blank" rel="noopener">https://www.w3cplus.com/css3/css3-supports.html</a></p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">状态码</th>
+<th style="text-align:left">原因短语</th>
+<th style="text-align:left">描述内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">200</td>
+<td style="text-align:left">OK</td>
+<td style="text-align:left">请求在服务器端正常处理了</td>
+</tr>
+<tr>
+<td style="text-align:left">204</td>
+<td style="text-align:left">No Content</td>
+<td style="text-align:left">请求处理了，但返回的响应报文中不含实体的主体部分</td>
+</tr>
+<tr>
+<td style="text-align:left">206</td>
+<td style="text-align:left">Partial Content</td>
+<td style="text-align:left">进行了范围请求，返回的响应报文中包含<br/>由Content-Range指定范围的实体内容</td>
+</tr>
+<tr>
+<td style="text-align:left">301</td>
+<td style="text-align:left">Move Permanently</td>
+<td style="text-align:left">永久性重定向。请求的资源已被分配了新的 URI</td>
+</tr>
+<tr>
+<td style="text-align:left">302</td>
+<td style="text-align:left">Found</td>
+<td style="text-align:left">临时性重定向。请求的资源已被分配了新的 URI，<br/>希望用户(本次)能使用新的 URI访问</td>
+</tr>
+<tr>
+<td style="text-align:left">303</td>
+<td style="text-align:left">See Other</td>
+<td style="text-align:left">由于请求对应的资源存在着另一个 URI，<br/>应使用 GET方法定向获取请求的资源</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>304</strong></td>
+<td style="text-align:left"><strong>Not Modified</strong></td>
+<td style="text-align:left"><strong>服务器端资源未改变，可直接使用客户端未过期的缓存</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">307</td>
+<td style="text-align:left">Temporary Redirect</td>
+<td style="text-align:left">临时重定向。和 302状态码含义类似</td>
+</tr>
+<tr>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Bad Request</td>
+<td style="text-align:left">请求报文中存在语法错误</td>
+</tr>
+<tr>
+<td style="text-align:left">401</td>
+<td style="text-align:left">Unauthorized</td>
+<td style="text-align:left">客户端发送的请求需要有通过 HTTP认证的认证信息</td>
+</tr>
+<tr>
+<td style="text-align:left">403</td>
+<td style="text-align:left">Forbidden</td>
+<td style="text-align:left">请求资源的访问被服务器给拒绝了</td>
+</tr>
+<tr>
+<td style="text-align:left">404</td>
+<td style="text-align:left">Not Found</td>
+<td style="text-align:left">服务器上无法找到请求的资源</td>
+</tr>
+<tr>
+<td style="text-align:left">500</td>
+<td style="text-align:left">Internal Server Error</td>
+<td style="text-align:left">服务器端在执行请求时发生了错误</td>
+</tr>
+<tr>
+<td style="text-align:left">503</td>
+<td style="text-align:left">Service Unavailable</td>
+<td style="text-align:left">服务器暂时处于超负荷或<br/>正在进行停机维护，现在无法处理请求</td>
+</tr>
+</tbody>
+</table>
 
       
 
@@ -232,19 +326,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Front-end</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">译文</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSS 变量</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
         		</li>
       		
 		</ul>
@@ -300,7 +386,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://calf1234.github.io/2019/04/13/%E8%AF%91%EF%BC%9AGet-a-CSS-Custom-Property-value-with-JavaScript/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://calf1234.github.io/2020/05/09/%E5%9B%BE%E8%A7%A3HTTP-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +400,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/14/class-icon-class-icon/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/09/%E8%BD%AC%E6%8D%A2JSONObject%E5%AF%B9%E8%B1%A1-null%E8%A7%A3%E6%9E%90%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E2%80%9Cnull%E2%80%9D/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          [class^=&#39;icon-&#39;], [class*=&#39; icon-&#39;]
+          转换成JSONObject对象 null解析成了字符串“null”
         
       </div>
     </a>
   
   
-    <a href="/2019/04/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/05/08/%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6-Volley%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络框架 Volley源码分析</div>
       <i class="icon-circle-right"></i>
     </a>
   
